@@ -9,31 +9,31 @@ import Foundation
 import UIKit
 
 public class MagnifyView: UIView {
-    var viewToMagnify: UIView!
+    public var viewToMagnify: UIView!
     var touchPoint: CGPoint!
     var context: CGContext?
     
-    var boarderColor: UIColor? {
+    public var boarderColor: UIColor? {
         didSet {
             setBorderColor()
         }
     }
     
-    var boarderWidth: CGFloat? {
+    public var boarderWidth: CGFloat? {
         didSet {
             setBorderWidth()
         }
     }
     
-    func setBorderColor() {
+    public func setBorderColor() {
         self.layer.borderColor = boarderColor?.cgColor
     }
     
-    func setBorderWidth() {
+    public func setBorderWidth() {
         self.layer.borderWidth = boarderWidth ?? 1
     }
     
-    override init(frame: CGRect) {
+    public  override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
@@ -52,7 +52,7 @@ public class MagnifyView: UIView {
         self.layer.masksToBounds = true
     }
     
-    func setTouchPoint(pt: CGPoint) {
+    public func setTouchPoint(pt: CGPoint) {
         touchPoint = pt
         self.center = CGPoint(x: pt.x, y: pt.y - 10)
     }
